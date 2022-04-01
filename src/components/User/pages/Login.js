@@ -12,7 +12,7 @@ import {
   VALIDATOR_MINLENGTH,
   VALIDATOR_EMAIL
 } from '../../Shared/util/validators';
-import API_PREFIX from '../../../sharedUrls';
+import { loginAttempt } from '../../../Middlewares/backend-requests';
 // custom and built-in hooks imports:
 import { useForm } from '../../Shared/hooks/form-hook';
 import { useDispatch } from 'react-redux';
@@ -40,31 +40,6 @@ const LoginPage = () => {
   const dispatch = useDispatch();
   useEffect(() => { }, [error]);
 
-  /* This method will serve use to send request to the server and will handle the response
-   * accordingly. */
-  const loginAttempt = async (email, password) => {
-    try {
-      /* Using our http custom hook in order to send the request and update the 'isLoading', 'error'
-       * States that the hook produce for us */
-      const responseData = await sendRequest(
-        `${API_PREFIX}/user/login`, // URL
-        'POST', // METHOD
-        { // BODY
-          email: email,
-          password: password
-        },
-        { // HEADERS
-        },
-        "Login Failed, Check credentials and try again." // DEFAULT ERROR MSG, SPP = server problem possibility.
-      );
-      return responseData; // The case the user enter valid credentials.
-    }
-    catch (e) {
-      console.log(`err__login = ${e}`); // The case the user entered invalid credentials / server problem.
-      return null;
-    }
-  };
-
   // The submit handler for the login form, this is the procedure that will execute in button press event:
   const placeSubmitHandler = async event => {
     event.preventDefault();
@@ -81,7 +56,7 @@ const LoginPage = () => {
         }));
       }
     }
-    catch (e) { 
+    catch (e) {
       console.log(`Some unknown error occurred in login page, err = ${e}`);
     }
     // In case the login procedure failed the 'error' variable from the custom http hook 
