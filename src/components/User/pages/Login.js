@@ -44,7 +44,7 @@ const LoginPage = () => {
   const placeSubmitHandler = async event => {
     event.preventDefault();
     try {
-      const reqData = await loginAttempt(formState.inputs.email.value, formState.inputs.password.value);
+      const reqData = await loginAttempt(formState.inputs.email.value, formState.inputs.password.value, sendRequest);
       if (reqData) {  // The case the user successfully signed in.
         clearError();
         const { userID, gameProfileID, token } = reqData.data;

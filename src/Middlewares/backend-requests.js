@@ -47,7 +47,7 @@ export const signupAttempt = async (email, password, username, platform, sendReq
     }
 };
 
-export const loginAttempt = async (email, password) => {
+export const loginAttempt = async (email, password, sendRequest) => {
     /* This method will serve use to send login request to the server and will handle the response
      * accordingly. */
     try {
