@@ -4,10 +4,10 @@
 const makeBattleUrl = (username) => {
     let splittedUsername = username.split('#');
     if (splittedUsername.length === 2) {
-        return `${process.env.API_PREFIX}/profile/username/${splittedUsername[0] + "%2523" + splittedUsername[1]}/platform/battle`;
+        return `${process.env.REACT_APP_API_PREFIX}/profile/username/${splittedUsername[0] + "%2523" + splittedUsername[1]}/platform/battle`;
     };
     // The case someone enter invalid username.
-    return `${process.env.API_PREFIX}/profile/username/${"invalidTemplate" + "%2523" + "YouDontDeserveTheSearch"}/platform/battle`;
+    return `${process.env.REACT_APP_API_PREFIX}/profile/username/${"invalidTemplate" + "%2523" + "YouDontDeserveTheSearch"}/platform/battle`;
 };
 
 const makeBattleUsername = (username) => {
@@ -27,7 +27,7 @@ export const signupAttempt = async (email, password, username, platform, sendReq
             fixedUsername = makeBattleUsername(username);
         }
         const responseData = await sendRequest(
-            `${process.env.API_PREFIX}/user/signup`, // URL
+            `${process.env.REACT_APP_API_PREFIX}/user/signup`, // URL
             'POST', // METHOD
             { // BODY
                 email: email,
@@ -54,7 +54,7 @@ export const loginAttempt = async (email, password, sendRequest) => {
         /* Using our http custom hook in order to send the request and update the 'isLoading', 'error'
          * States that the hook produce for us */
         const responseData = await sendRequest(
-            `${process.env.API_PREFIX}/user/login`, // URL
+            `${process.env.REACT_APP_API_PREFIX}/user/login`, // URL
             'POST', // METHOD
             { // BODY
                 email: email,
@@ -76,7 +76,7 @@ export const playerSearchAttempt = async (username, platform, sendRequest) => {
     try {
         /* Using our http custom hook in order to send the request and update the 'isLoading', 'error'
          * States that the hook produce for us */
-        let url = `${process.env.API_PREFIX}/profile/username/${username}/platform/${platform}`;
+        let url = `${process.env.REACT_APP_API_PREFIX}/profile/username/${username}/platform/${platform}`;
         if (platform === 'battle') {
             url = makeBattleUrl(username);
         };
@@ -109,7 +109,7 @@ export const playersCompareAttempt = async (usernames, platforms, sendRequest) =
     try {
         const usernamesCopy = [...usernames]; // In order not to effect the original users array. 
         fixBattleUsernames(usernamesCopy, platforms);
-        const url = `${process.env.API_PREFIX}/squad/compare`;
+        const url = `${process.env.REACT_APP_API_PREFIX}/squad/compare`;
         const reqBody = {
             usernames: usernamesCopy,
             platforms: platforms
@@ -132,7 +132,7 @@ export const playersCompareAttempt = async (usernames, platforms, sendRequest) =
 
 export const matchSearchAttempt = async (matchID, sendRequest) => {
     try {
-        const url = `${process.env.API_PREFIX}/match/${matchID}`;
+        const url = `${process.env.REACT_APP_API_PREFIX}/match/${matchID}`;
         const reqBody = {};
         const responseData = await sendRequest(
             url, // URL
@@ -152,7 +152,7 @@ export const matchSearchAttempt = async (matchID, sendRequest) => {
 
 export const getUserData = async (token, sendRequest) => {
     try {
-        const url = `${process.env.API_PREFIX}/user/get-user-data`;
+        const url = `${process.env.REACT_APP_API_PREFIX}/user/get-user-data`;
         const reqBody = {};
         const responseData = await sendRequest(
             url, // URL
@@ -175,7 +175,7 @@ export const addSquad = async (token, usernames, platforms, squadName, sendReque
     try {
         const usernamesCopy = [...usernames]; // In order not to effect the original users array. 
         fixBattleUsernames(usernamesCopy, platforms);
-        const url = `${process.env.API_PREFIX}/user/add-squad`;
+        const url = `${process.env.REACT_APP_API_PREFIX}/user/add-squad`;
         const reqBody = {
             usernames: usernamesCopy,
             platforms: platforms,
