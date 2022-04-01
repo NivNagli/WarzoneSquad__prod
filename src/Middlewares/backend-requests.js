@@ -54,7 +54,7 @@ export const loginAttempt = async (email, password, sendRequest) => {
         /* Using our http custom hook in order to send the request and update the 'isLoading', 'error'
          * States that the hook produce for us */
         const responseData = await sendRequest(
-            `warzonesquadapi.herokuapp.com/user/login`, // URL
+            `${process.env.REACT_APP_API_PREFIX}/user/login`, // URL
             'POST', // METHOD
             { // BODY
                 email: email,
