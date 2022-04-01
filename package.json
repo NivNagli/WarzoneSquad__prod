@@ -2,6 +2,11 @@
   "name": "frontend",
   "version": "0.1.0",
   "private": true,
+  "description": "WarzoneSquad",
+  "engines": {
+    "node": "15.12.0",
+    "npm": "7.22.0"
+  },
   "dependencies": {
     "@reduxjs/toolkit": "^1.7.1",
     "axios": "^0.24.0",
