@@ -1,0 +1,41 @@
+.platform_select {
+  /* Reset */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: 0;
+  outline: 0;
+  font: inherit;
+  /* Personalize */
+  width: 7.5em;
+  height: 1.5em;
+  background: rgba(0, 41, 102, 0.795);
+  color: rgb(255, 187, 0);
+  border-radius: 0.25em;
+  box-shadow: 0 0 1em 0 rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  text-align: center;
+  font-weight: bold;
+}
+.platform_select option {
+  color: inherit;
+  background-color: #320a28;
+}
+.platform_select:focus {
+  outline: none;
+}
+.platform_select::-ms-expand {
+  display: none;
+}
+
+.platform_div {
+  display: flex;
+  justify-content: center;
+  margin-top: 1.5rem;
+}
+
+.platform_label{
+  font-weight: bold;
+  color:white;
+  margin-right: 0.5rem;
+}

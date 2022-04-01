@@ -1,0 +1,51 @@
+.match__info {
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width:50%;
+    height:2rem;
+    color:rgb(230, 213, 213);
+    padding-left: 1rem;
+  }
+  
+  .match__top{
+    font-size:0.75rem;
+    font-weight: 700;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    font-style: oblique;
+    width:100%;
+  }
+  
+  .match__bottom{
+    font-size:0.75rem;
+    font-weight: 700;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    font-style: oblique;
+    width:100%;
+    color:white;
+  }
+  
+  @media (max-width: 375px) {
+    .match__top{
+      font-size:0.5rem;
+      font-weight: 700;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      font-style: oblique;
+    }
+    
+    .match__bottom{
+      font-size:0.55rem;
+      font-weight: 700;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      font-style: oblique;
+    }
+  }

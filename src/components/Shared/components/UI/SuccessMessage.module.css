@@ -1,0 +1,14 @@
+.success_message {
+
+    margin: auto;
+    width: 90%;
+    border: 1px solid #4771fa;
+    padding: 0.5rem;
+    border-radius: 3px;
+    background: #DFF2BF;
+    text-align: center;
+    border-color: #059;
+    color: #270;
+    font-weight: bold;
+    max-width: 40rem;
+}

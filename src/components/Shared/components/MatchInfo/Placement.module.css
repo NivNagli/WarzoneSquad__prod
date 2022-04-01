@@ -1,0 +1,93 @@
+.match__placement {
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width:3rem;
+    height:3rem;
+    color:rgb(230, 213, 213);
+  }
+  
+  .match__placement_won{
+    font-size:2rem;
+    font-weight: 500;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    font-style: oblique;
+    color:rgb(21, 255, 0);
+    width:3rem;
+    height:3rem;
+  }
+
+  .match__placement_second {
+    font-size:2rem;
+    font-weight: 500;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    font-style: oblique;
+    color: rgb(255, 0, 0);
+    width:3rem;
+    height:3rem;
+  }
+  
+  .match__placement_third {
+    font-size:2rem;
+    font-weight: 500;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    font-style: oblique;
+    color: rgb(207, 153, 83);
+    width:3rem;
+    height:3rem;
+  }
+
+  .match__placement_lost{
+    font-size:2rem;
+    font-weight: 700;
+    white-space: nowrap;
+    width:3rem;
+    height:3rem;
+  }
+
+  @media (max-width: 750px) {
+    
+    .match__placement_lost{
+      font-size:1.2rem;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    .match__placement_won{
+      font-size:1.2rem;
+      font-weight: 500;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      font-style: oblique;
+      color:rgb(21, 255, 0);
+    }
+
+    .match__placement_second {
+      font-size:1.2rem;
+      font-weight: 500;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      font-style: oblique;
+      color: rgb(255, 0, 0);
+    }
+    
+    .match__placement_third {
+      font-size:1.2rem;
+      font-weight: 500;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      font-style: oblique;
+      color: rgb(207, 133, 83);
+    }
+  }
+  

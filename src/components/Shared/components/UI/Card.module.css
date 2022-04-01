@@ -1,0 +1,14 @@
+.card {
+    position: relative;
+    list-style: none;
+    margin: 0 auto;
+    width: 90%;
+    max-width: 40rem;
+    /* */
+    font-weight: bold;
+    text-align: center;
+    border-radius: 6px;
+    box-shadow: 0 2px 8px rgba(0, 255, 213, 0.411);
+    border-radius: 6px;
+    background-color: #031c31;
+}

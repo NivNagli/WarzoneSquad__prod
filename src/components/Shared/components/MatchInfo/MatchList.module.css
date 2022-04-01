@@ -1,0 +1,35 @@
+.match__list {
+  position: relative;
+  list-style: none;
+  margin: 0 auto;
+  width: 90%;
+  max-width: 40rem;
+  /* */
+  font-weight: bold;
+  text-align: center;
+  border-radius: 6px;
+  box-shadow: 0 2px 8px rgba(0, 255, 128, 0.411);
+  border-radius: 6px;
+  background-color: #031c31;
+  display: block;
+  overflow: auto;
+  margin-top:2rem;
+}
+
+.match_list_h2{
+    display: flex;
+    justify-content: center;
+    margin-top:1rem;
+    margin-bottom:0.35rem;
+    font-size: 1.4rem;
+    color:rgb(236, 225, 225);
+    font-weight: bold;
+    text-align: center;
+    border-radius: 6px;
+    box-shadow: 0 1px 2.5px rgba(0, 255, 213, 0);
+    border-radius: 6px;
+    max-width: 55rem;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}

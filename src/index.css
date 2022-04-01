@@ -1,0 +1,24 @@
+* {
+  box-sizing: border-box;
+  -moz-box-sizing: border-box; /* Firefox */
+  -webkit-box-sizing: border-box; /* Safari */
+}
+
+html {
+  font-family: Oswald,Helvetica,Arial,sans-serif;
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  margin: 0;
+  height: 100%;
+  width: 100%;
+  background-color: #011627;
+}
+
+main {
+  width: 75%;
+  margin: 0 auto;
+  min-height:calc(100vh - 15rem);
+}

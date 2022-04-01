@@ -1,0 +1,31 @@
+.greeting_message__div {
+    width: 100%;
+    background-color: #001f3f;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 45rem;
+    text-align: center;
+}
+
+.greeting_message__title{
+    text-transform: uppercase;
+    font-weight: bold;
+    color: #e2f023;
+    font-size: 20px;
+    margin: 0 0 8px;
+}
+
+.greeting_message__main {
+    color: #fff;
+    font-size: 19px;
+    margin: 0 0 8px;
+}
+
+.greeting_message__main_sub {
+    color: #e74c3c;
+    font-size: 18px;
+    margin: 0 0 8px;
+    padding-top: 1rem;
+}
+

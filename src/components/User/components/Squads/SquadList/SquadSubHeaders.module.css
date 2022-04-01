@@ -1,0 +1,60 @@
+.squad__general_info_div {
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width:9.5rem;
+    height:3rem;
+    color:rgb(230, 213, 213);
+    padding-left: 1rem;
+    
+  }
+  
+  .squad__top{
+    font-size:1.1rem;
+    font-weight: 700;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    color:springgreen;
+  }
+  
+  .squad__bottom{
+    font-size:1rem;
+    font-weight: 700;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    color:tomato;
+  }
+
+  @media (max-width: 750px) {
+    .squad__general_info_div {
+      display:flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width:9.5rem;
+      height:3rem;
+      color:rgb(230, 213, 213);
+      padding-left: 1rem;
+      
+    }
+    
+    .squad__top{
+      font-size:1rem;
+      font-weight: 700;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden;
+    }
+    
+    .squad__bottom{
+      font-size:0.9rem;
+      font-weight: 700;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden;
+    }
+  }
+  

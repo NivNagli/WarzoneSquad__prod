@@ -1,0 +1,30 @@
+.benefit_message__div {
+    width: 100%;
+    background-color: #001f3f;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 39rem;
+}
+
+.benefit_message__title{
+    text-transform: uppercase;
+    font-weight: bold;
+    color: #4F9EE3;
+    font-size: 18px;
+    margin: 0 0 8px;
+}
+
+.benefit_message__main {
+    color: #fff;
+    font-size: 18px;
+    margin: 0 0 8px;
+}
+
+.benefit_message__main_sub {
+    color: #fff;
+    font-size: 18px;
+    margin: 0 0 8px;
+    padding-top: 1rem;
+}
+

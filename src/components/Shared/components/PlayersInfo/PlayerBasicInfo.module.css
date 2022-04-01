@@ -1,0 +1,18 @@
+.player_base_info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 5rem;
+  color: rgb(213, 230, 226);
+  margin-bottom: 1.5rem;
+}
+
+.player_name {
+  font-size: 2rem;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.player_name::first-letter {
+  text-transform: capitalize;
+}

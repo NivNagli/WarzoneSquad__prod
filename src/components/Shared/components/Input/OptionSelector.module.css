@@ -1,0 +1,41 @@
+.custom_select {
+    /* Reset */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border: 0;
+    outline: 0;
+    font: inherit;
+    /* Personalize */
+    width: 7.5em;
+    height: 1.5em;
+    background: rgba(0, 41, 102, 0.795);
+    color: #f85e4d;
+    border-radius: 0.25em;
+    box-shadow: 0 0 0.35em 0 rgba(0, 88, 219, 0.877);
+    cursor: pointer;
+    text-align: center;
+    font-weight: bold;
+  }
+  .custom_select option {
+    color: inherit;
+    background-color: #320a28;
+  }
+  .custom_select:focus {
+    outline: none;
+  }
+  .custom_select::-ms-expand {
+    display: none;
+  }
+  
+  .custom_div {
+    display: flex;
+    justify-content: center;
+    margin-top: 1.5rem;
+  }
+  
+  .custom_label{
+    font-weight: bold;
+    color:white;
+    margin-right: 0.5rem;
+  }

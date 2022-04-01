@@ -1,0 +1,15 @@
+.warning_message {
+
+    background-color: #FEEFB3;
+    margin: auto;
+    width: 90%;
+    border: 1px solid #4771fa;
+    padding: 0.5rem;
+    border-radius: 3px;
+    background: #FEEFB3;
+    text-align: center;
+    border-color: red;
+    background: #FEEFB3;
+    color: #9F6000;
+    font-weight: bold;
+}

@@ -1,0 +1,59 @@
+.match_date_mode__div {
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width:9.5rem;
+    height:3rem;
+    color:rgb(230, 213, 213);
+    padding-left: 1rem;
+    
+  }
+  
+  .match__date{
+    font-size:0.8rem;
+    font-weight: 700;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
+  
+  .match__mode{
+    font-size:1rem;
+    font-weight: 700;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    color:#e2f023;
+  }
+
+  @media (max-width: 750px) {
+    .match_date_mode__div {
+      display:flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width:9.5rem;
+      height:3rem;
+      color:rgb(230, 213, 213);
+      padding-left: 1rem;
+      
+    }
+    
+    .match__date{
+      font-size:0.75rem;
+      font-weight: 700;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden;
+    }
+    
+    .match__mode{
+      font-size:0.75rem;
+      font-weight: 700;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden;
+    }
+  }
+  
