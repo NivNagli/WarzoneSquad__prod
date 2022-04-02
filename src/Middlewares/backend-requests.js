@@ -1,6 +1,6 @@
 /* As the name sounds like this is where all the requests protocol will be written in order to avoid
  * unnecessary re writing the same request protocol twice. */
-const API_PREFIX = 'http://warzonesquadapi-env.eba-2ie5twnx.eu-central-1.elasticbeanstalk.com';
+const API_PREFIX = 'https://www.warzonesquadapi.com';
 const makeBattleUrl = (username) => {
     let splittedUsername = username.split('#');
     if (splittedUsername.length === 2) {
