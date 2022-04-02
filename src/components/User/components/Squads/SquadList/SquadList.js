@@ -10,6 +10,7 @@ const SquadList = props => {
         return (
             <div className={classes.squad__list}>
                 <h2 className={classes.squad_list_h2}> {"You don't have any squads yet."} </h2>
+                <AddSquadButton token={props.token}></AddSquadButton>
             </div>
         );
     }
