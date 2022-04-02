@@ -124,7 +124,7 @@ const CompareSearch = () => {
     ]
     return (
         <React.Fragment>
-            {isLoading && <WarningMessage msg={"The operation for the first time takes a little longer, And that's so in the next time the search will be faster."}></WarningMessage>}
+            {isLoading && <WarningMessage msg={"For the first time searching a user, the operation take between 30 sec to 2 minutes. And that's so in the next time the search will be faster."}></WarningMessage>}
             {(!isLoading && error) && <ErrorMessage error={error} />}
             <form className={classes.compare_form} onSubmit={placeSubmitHandler}>
                 {isLoading && <LoadingSpinner asOverlay />}

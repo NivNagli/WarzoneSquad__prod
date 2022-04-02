@@ -37,7 +37,7 @@ export const signupAttempt = async (email, password, username, platform, sendReq
             },
             { // HEADERS
             },
-            "Signup Failed, Check credentials and try again, [SPP]." // DEFAULT ERROR MSG SPP = server problem possibility.
+            "Signup Failed, Check credentials and try again, COD's Official API is currently slow." // DEFAULT ERROR MSG SPP = server problem possibility.
         );
         return responseData; // The case the user enter valid credentials.
     }
@@ -87,7 +87,7 @@ export const playerSearchAttempt = async (username, platform, sendRequest) => {
             },
             { // HEADERS
             },
-            "Searched Failed, Check username and platform and try again, [SPP]." // DEFAULT ERROR MSG SPP = server problem possibility.
+            "Searched Failed, Check username and platform and try again, ." // DEFAULT ERROR MSG SPP = server problem possibility.
         );
         return responseData; // The case the user enter valid credentials.
     }

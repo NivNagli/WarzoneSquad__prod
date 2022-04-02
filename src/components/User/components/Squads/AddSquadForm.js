@@ -143,7 +143,7 @@ const AddSquadForm = (props) => {
     ]
     return (
         <React.Fragment>
-            {isLoading && <WarningMessage msg={"If one of the user's not searched before the operation will take a little longer."}></WarningMessage>}
+            {isLoading && <WarningMessage msg={"For the first time searching a user, the operation take between 30 sec to 2 minutes. And that's so in the next time the search will be faster."}></WarningMessage>}
             {(!isLoading && error) && <ErrorMessage error={error} />}
             <div className={classes.squad__name}>
                     <Input
