@@ -15,6 +15,10 @@ const SignedUserProfile = props => {
     const dispatch = useDispatch();
     let history = useHistory();
     const token = useSelector(state => state.auth.token);
+    const onExpired = () => {
+        dispatch(authActions.logout());
+        history.push("/");
+    };
     const { isLoading, error, sendRequest, clearError } = useHttpClient();
 
     let usersDataFound; // Flag that will help to determine when the user data is loaded.
@@ -37,7 +41,7 @@ const SignedUserProfile = props => {
                 dispatch(authActions.logout());
                 return history.push("/");
             }
-            const reqData = await getUserData(backupToken, sendRequest);
+            const reqData = await getUserData(backupToken, sendRequest, onExpired);
             if (reqData) {
                 clearError();
                 setData(reqData);

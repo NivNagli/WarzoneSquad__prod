@@ -150,7 +150,7 @@ export const matchSearchAttempt = async (matchID, sendRequest) => {
     }
 };
 
-export const getUserData = async (token, sendRequest) => {
+export const getUserData = async (token, sendRequest, onExpired) => {
     try {
         const url = `${API_PREFIX}/user/get-user-data`;
         const reqBody = {};
@@ -167,11 +167,11 @@ export const getUserData = async (token, sendRequest) => {
     }
     catch (e) {
         console.log(`err__login = ${e}`); // The case the user entered invalid credentials / server problem.
-        return null;
+        return tokenExpired(e, onExpired);
     }
 };
 
-export const addSquad = async (token, usernames, platforms, squadName, sendRequest) => {
+export const addSquad = async (token, usernames, platforms, squadName, sendRequest, onExpired) => {
     try {
         const usernamesCopy = [...usernames]; // In order not to effect the original users array. 
         fixBattleUsernames(usernamesCopy, platforms);
@@ -194,7 +194,16 @@ export const addSquad = async (token, usernames, platforms, squadName, sendReque
     }
     catch (e) {
         console.log(`err__login = ${e}`); // The case the user entered invalid credentials / server problem.
-        return null;
+        return tokenExpired(e, onExpired);
     }
 };
 
+const tokenExpired = (error, onExpired) => {
+    try {
+        if (error.response.status === 403) {
+            onExpired();
+        }
+    }
+    catch { }
+    return null;
+}

@@ -18,6 +18,8 @@ import {
 // custom and built-in hooks imports:
 import { useHttpClient } from '../../../Shared/hooks/http-hook';
 import { addSquad } from '../../../../Middlewares/backend-requests';
+import { authActions } from '../../../../store/auth';
+import { useSelector, useDispatch } from 'react-redux';
 
 const AddSquadForm = (props) => {
     /* This component is very similar to the 'CompareSearch' component, but this time we are receiving the jwt
@@ -65,9 +67,16 @@ const AddSquadForm = (props) => {
         false
     );
     // =================================================================
+    const dispatch = useDispatch();
+    let history = useHistory();
+    // Method which is called when the user jwt token is expired or invalid.
+    const onExpired = () => {
+        dispatch(authActions.logout());
+        history.push("/");
+    };
+    // =================================================================
 
     const [whileSearch, setWhileSearch] = useState(false); // This state will prevent spamming from the user while searching
-    let history = useHistory();
     const { isLoading, error, sendRequest, clearError } = useHttpClient();
     useEffect(() => { }, [error]);  // Render the component each time the error is changed.
 
@@ -115,7 +124,7 @@ const AddSquadForm = (props) => {
             const platforms = [enteredPlatformUser1, enteredPlatformUser2, enteredPlatformUser3, enteredPlatformUser4].slice(0, enteredNumberOfPlayers);
             // Send the request to the server.
             console.log(props.token, usernames, platforms, formState.inputs.squadName.value, '$$$');
-            const reqData = await addSquad(props.token, usernames, platforms, formState.inputs.squadName.value, sendRequest);
+            const reqData = await addSquad(props.token, usernames, platforms, formState.inputs.squadName.value, sendRequest, onExpired);
             if (reqData) {
                 // The case of successful request.
                 userFound = true;
@@ -146,16 +155,16 @@ const AddSquadForm = (props) => {
             {isLoading && <WarningMessage msg={"For the first time searching a user, the operation take between 30 sec to 2 minutes. And that's so in the next time the search will be faster."}></WarningMessage>}
             {(!isLoading && error) && <ErrorMessage error={error} />}
             <div className={classes.squad__name}>
-                    <Input
-                        id="squadName"
-                        element="input"
-                        label="Please Name The New Squad:"
-                        type="text"
-                        validators={[VALIDATOR_REQUIRE()]}
-                        errorText="Please enter a valid squad name."
-                        onInput={inputHandler}
-                    />
-                </div>
+                <Input
+                    id="squadName"
+                    element="input"
+                    label="Please Name The New Squad:"
+                    type="text"
+                    validators={[VALIDATOR_REQUIRE()]}
+                    errorText="Please enter a valid squad name."
+                    onInput={inputHandler}
+                />
+            </div>
             <form className={classes.addSquad_form} onSubmit={placeSubmitHandler}>
                 {isLoading && <LoadingSpinner asOverlay />}
                 <div className={classes.players_select_div}>
